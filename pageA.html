@@ -18,14 +18,14 @@
             </tr>
             <tr>
                 <td><button value="C" onclick="clr()">C</button></td>
-                <td><button value="%" onclick="display('%')">%</button></td>
-                <td><button value="()" onclick="display('()')">( )</button></td>
-                <td><button value="←" onclick="backspace()">←</button></td>
+                <td><button value="(" onclick="display('(')">(</button></td>
+                <td><button value=")" onclick="display(')')">)</button></td>
+                <td> <button value="!" onclick="display('!')" > ! </button> </td>
             </tr>
             <tr>
-                <td><button value="1/x" >1/x</button></td>
+                <td><button value="%" onclick="display('%')">%</button></td>
                 <td><button value="square" onclick="display('^')">^</button></td>
-                <td><button value="√x" >√x</button></td>
+                <td><button value="√x" onclick="display('')">√</button></td>
                 <td><button value="/" onclick="display('/')">/</button></td>
             </tr>
             <tr>
@@ -47,10 +47,10 @@
                 <td> <button value="+" onclick="display('+')" > + </button> </td>
             </tr>
             <tr>    
-                <td> <button value="0" onclick="display()" > +/- </button> </td>
-                <td> <button value="." onclick="display('0')" > 0 </button> </td>
                 <td> <button value="." onclick="display('.')" > . </button> </td>
-                <td> <button value="=" onclick="solve()"> = </button> </td>
+                <td> <button value="0" onclick="display('0')" > 0 </button> </td>
+                <td><button value="←" onclick="backspace()">←</button></td>
+                <td> <button value="=" onclick="pressed_equals()"> = </button> </td>
             </tr>
         </table>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js"></script>

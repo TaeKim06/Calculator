@@ -1,5 +1,7 @@
 document.addEventListener("keydown", pressedkey);
-let show_result = false;
+let operations = 0;
+const funcs = "*+-/^%()!";
+const nums = "0123456789.";
 
 function pressedkey(event){
     
@@ -9,54 +11,66 @@ function pressedkey(event){
     }
     if (event.key === 'Enter'){
         event.preventDefault();
-        solve();
+        pressed_equals();
     }
-    if ("*+-/".includes(event.key)){
-        show_result = true;
-    }
-    if ("0123456789.".includes(event.key)) {
+    if (funcs.includes(event.key)){
         document.getElementById("current").value += event.key;
-        check()
+        operations++;
+        check();
+    }
+    if (nums.includes(event.key)) {
+        document.getElementById("current").value += event.key;
+        check();
     }
 }
 
 function display(val){
-    if ("*+-/^".includes(val)){
-        show_result = true;
-    }
     document.getElementById("current").value += val;
+    if (funcs.includes(val)){
+        operations++;
+    }
+    else{
+        check();
+    }
 }
 
 function clr(){
     document.getElementById("current").value = "";
     document.getElementById("result").value = "";
-    show_result = false;
+    operations--;
 }
 
 function backspace(){
     let str = document.getElementById("current").value;
-    if("*+-/^".includes(str.slice(str.length - 1, str.length))){
-        show_result = false;
+    if(funcs.includes(str.slice(str.length - 1, str.length))){
+        operations--;
     }
     let new_val = str.slice(0, str.length - 1);
     document.getElementById("current").value = new_val;
     check();
 }
 
-// function sqr(){
-//     let str = document.getElementById("current").value;
-//     document.getElementById("current").value = str + "^2";
-// }
+
 
 function solve(){
     let input_val = document.getElementById("current").value;
     let solved = math.evaluate(input_val);
-    show_result = true;
     document.getElementById("result").value = solved;
 }
 
+function pressed_equals(){
+    let new_input = document.getElementById("result").value;
+    if(new_input !== ""){
+        document.getElementById("current").value = new_input;
+        document.getElementById("result").value = "";
+    }
+}
+
 function check(){
-    if(show_result === true){
+    if(operations < 0){
+        operations = 0;
+    }
+    if(operations > 0){
         solve();
     }
     else { document.getElementById("result").value = ""; }
