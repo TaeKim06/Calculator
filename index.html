@@ -7,52 +7,43 @@
     <title> Calculator </title>
 
     <body>
+
+        <div class="calc-container">
+            <input type="text" class="display" id="current" readonly>
+            <input type="text" class="display" id="result" readonly>
+
+            <button class="funcs" value="C" onclick="clr()">C</button>
+            <button class="funcs" value="(" onclick="display('(')">(</button>
+            <button class="funcs" value=")" onclick="display(')')">)</button>
+            <button class="funcs" value="!" onclick="display('!')" > ! </button>
+
+            <button class="funcs" value="%" onclick="display('%')">%</button>
+            <button class="funcs" value="square" onclick="display('^')">^</button>
+            <button class="funcs" value="√x" onclick="display('')">√</button>
+            <button class="funcs" value="/" onclick="display('/')">/</button>
+
+            <button class="centrals" value="7" onclick="display('7')" > 7 </button>
+            <button class="centrals" value="8" onclick="display('8')" > 8 </button>
+            <button class="centrals" value="9" onclick="display('9')" > 9 </button>
+            <button class="funcs" value="*" onclick="display('*')" > × </button>
+
+            <button class="centrals" value="4" onclick="display('4')" > 4 </button>
+            <button class="centrals" value="5" onclick="display('5')" > 5 </button>
+            <button class="centrals" value="6" onclick="display('6')" > 6 </button>
+            <button class="funcs" value="-" onclick="display('-')" > - </button>
+
+            <button class="centrals" value="1" onclick="display('1')" > 1 </button>
+            <button class="centrals" value="2" onclick="display('2')" > 2 </button>
+            <button class="centrals" value="3" onclick="display('3')" > 3 </button>
+            <button class="funcs" value="+" onclick="display('+')" > + </button>
+
+            <button class="centrals" value="." onclick="display('.')" > . </button>
+            <button class="centrals" value="0" onclick="display('0')" > 0 </button>
+            <button class="centrals" value="←" onclick="backspace()">←</button>
+            <button id="equals" value="=" onclick="pressed_equals()"> = </button>
+        </div>
         
-        <table id = "calc">
-            <tr>
-                <td><input type="text" id="current" readonly></td>
-            </tr>
-            <tr>
-                <td><input type="text" id="result" readonly></td>
-                <!-- <td><button value="c" onclick="clr()"> C </button></td> -->
-            </tr>
-            <tr>
-                <td> <button class="funcs" value="C" onclick="clr()">C</button></td>
-                <td> <button class="funcs" value="(" onclick="display('(')">(</button></td>
-                <td> <button class="funcs" value=")" onclick="display(')')">)</button></td>
-                <td> <button class="funcs" value="!" onclick="display('!')" > ! </button> </td>
-            </tr>
-            <tr>
-                <td> <button class="funcs" value="%" onclick="display('%')">%</button></td>
-                <td> <button class="funcs" value="square" onclick="display('^')">^</button></td>
-                <td> <button class="funcs" value="√x" onclick="display('')">√</button></td>
-                <td> <button class="funcs" value="/" onclick="display('/')">/</button></td>
-            </tr>
-            <tr>
-                <td> <button class="centrals" value="7" onclick="display('7')" > 7 </button> </td>
-                <td> <button class="centrals" value="8" onclick="display('8')" > 8 </button> </td>
-                <td> <button class="centrals" value="9" onclick="display('9')" > 9 </button> </td>
-                <td> <button class="funcs" value="*" onclick="display('*')" > × </button> </td>
-            </tr>
-            <tr>
-                <td> <button class="centrals" value="4" onclick="display('4')" > 4 </button> </td>
-                <td> <button class="centrals" value="5" onclick="display('5')" > 5 </button> </td>
-                <td> <button class="centrals" value="6" onclick="display('6')" > 6 </button> </td>
-                <td> <button class="funcs" value="-" onclick="display('-')" > - </button> </td>
-            </tr>
-            <tr>
-                <td> <button class="centrals" value="1" onclick="display('1')" > 1 </button> </td>
-                <td> <button class="centrals" value="2" onclick="display('2')" > 2 </button> </td>
-                <td> <button class="centrals" value="3" onclick="display('3')" > 3 </button> </td>
-                <td> <button class="funcs" value="+" onclick="display('+')" > + </button> </td>
-            </tr>
-            <tr>    
-                <td> <button class="centrals" value="." onclick="display('.')" > . </button> </td>
-                <td> <button class="centrals" value="0" onclick="display('0')" > 0 </button> </td>
-                <td> <button class="centrals" value="←" onclick="backspace()">←</button></td>
-                <td> <button id="equals" value="=" onclick="pressed_equals()"> = </button> </td>
-            </tr>
-        </table>
+        
         <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/12.4.0/math.min.js"></script>
         <script src="script.js"></script>
     </body>

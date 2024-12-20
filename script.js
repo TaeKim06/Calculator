@@ -1,6 +1,6 @@
 document.addEventListener("keydown", pressedkey);
 let operations = 0;
-const funcs = "*+-/^%()!";
+const funcs = "*+-/^%!";
 const nums = "0123456789.";
 
 function pressedkey(event){
@@ -13,6 +13,9 @@ function pressedkey(event){
         event.preventDefault();
         pressed_equals();
     }
+    if ("()".includes(event.key)){
+        document.getElementById("current").value += event.key;
+    }    
     if (funcs.includes(event.key)){
         document.getElementById("current").value += event.key;
         operations++;
