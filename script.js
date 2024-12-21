@@ -40,7 +40,7 @@ function display(val){
 function clr(){
     document.getElementById("current").value = "";
     document.getElementById("result").value = "";
-    operations--;
+    operations = 0;
 }
 
 function backspace(){
